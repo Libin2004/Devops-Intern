@@ -8,7 +8,9 @@ resource "aws_instance" "strapi_server" {
   key_name = aws_key_pair.strapi_key.key_name
   vpc_security_group_ids = [aws_security_group.strapi_sg.id]
 
-  user_data = file("user-data.sh")
+  user_data = templatefile("${path.module}/user-data.sh", {
+  IMAGE_TAG = var.image_tag
+})
 
   tags = {
     Name = "Strapi-Docker-Server"

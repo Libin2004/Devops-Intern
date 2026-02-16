@@ -16,3 +16,6 @@ variable "key_name" {
   default = "strapi-ec2"
 }
 
+variable "image_tag" {
+  description = "Docker image tag"
+}

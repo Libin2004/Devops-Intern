@@ -26,4 +26,5 @@ jobs:
           aws-region: us-east-1
 
       - run: terraform init
-      - run: terraform apply -auto-approve -var="image_tag=${{ github.event.inputs.image_tag }}"
+      - run: terraform apply -auto-approve -var="image_tag=${{ github.event.inputs.image_tag }}" -var="public_key=${{ secrets.EC2_PUBLIC_KEY }}"
+

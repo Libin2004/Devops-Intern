@@ -19,3 +19,7 @@ variable "key_name" {
 variable "image_tag" {
   description = "Docker image tag"
 }
+variable "public_key" {
+  description = "SSH public key"
+}
+
